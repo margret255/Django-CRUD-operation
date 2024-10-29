@@ -1,0 +1,23 @@
+{% extends 'master.html' %}
+
+{% block content %}
+<h3>Update data</h3>
+<form action="">
+    {% csrf_token %}
+    <input value="{{user.name}}" placeholder="Update name" name="name"  type="text"><br><br>
+
+    <input value="{{user.email}}" placeholder="Update eamil" name="email"  type="email"><br><br>
+
+    <select name="gender" id="">
+
+        <option value="{{user.gender}}">{{user.gender}}</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select><br><br>
+    <input value="{{user.password}}" placeholder="Update password" name="password" type="password"><br><br>
+
+    <input name="send" value="update" type="submit">
+
+
+</form>
+{% endblock %}

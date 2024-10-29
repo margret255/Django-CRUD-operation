@@ -1,0 +1,29 @@
+{% extends 'master.html' %}
+
+{% block content %}
+    <h1>Welcome to our Home page</h1>
+<h3>Users</h3>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+        <!-- Example row, you can loop over your data here -->
+        {% for user in users %}
+        <tr>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{}user.gender}</td>
+
+                <a href="{% url 'delete' user.id %}">Delete</a>   <!-- Link for delete -->
+<a href="{% url 'update' user.id %}">Update</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
